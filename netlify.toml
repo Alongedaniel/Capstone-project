@@ -1,0 +1,18 @@
+[build]
+  # Specify the directory where your React app's build output will be located
+  base = "build"
+  # Specify the build command for your React app
+  command = "npm run build"
+  # Set environment variables if needed
+  # environment = { NODE_ENV = "production" }
+
+# Specify the redirect rules for client-side routing (if using)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*.html"
+    [headers.values]
+      Cache-Control = "no-store"

@@ -324,12 +324,12 @@ const Home = () => {
           {shortUrl && <><Box width='100%' display='flex' alignItems='center' gap='20px'>
             <Alert sx={{ width: '100%', display: 'flex', alignItems: 'center' }} severity="success">{shortUrl}</Alert> <Box>{copied ? <Box><Check fontSize="24px" /></Box>
               :
-              <CopyToClipboard text={shortUrl} style={{cursor: 'pointer'}} onCopy={() => setCopied(true)}>
+              <CopyToClipboard text={shortUrl} style={{ cursor: 'pointer' }} onCopy={() => setCopied(true)}>
                 <CopyAllRounded fontSize="24px" color='#000' />
               </CopyToClipboard>
             }
             </Box>
-          </Box><Box display='flex' alignItems='center' gap='30px'><QRCode id='qrcode' value={shortUrl} /><button style={{ backgroundColor: '#3284ff', padding: '12px 16px', border: 'none', color: '#fff', borderRadius: '12px'}} onClick={handleDownload}>Download QR Code</button></Box></>}
+          </Box><Box display='flex' alignItems='center' gap='30px'><QRCode id='qrcode' value={shortUrl} /><button style={{ backgroundColor: '#3284ff', padding: '12px 16px', border: 'none', color: '#fff', borderRadius: '12px' }} onClick={handleDownload}>Download QR Code</button></Box></>}
           <button class="button" onClick={() => domain === 'scissorsolution.netlify.app' ? shortenUrl(urlInput) : setError('Please choose a domain')}>Trim URL <img src={magicWand} alt="" /></button>
           <p class="card-bottom">By clicking TrimURL, I agree to the Terms of Service, Privacy Policy and Use
             of Cookies.</p>

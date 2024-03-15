@@ -52,6 +52,7 @@ const Home = () => {
     setTimeout(() => { setError(''); setCopied(false) }, 6000)
   }, [error, copied])
 
+
   const handleDownload = () => {
     // Convert the QR code to a data URL
     const dataUrl = document.getElementById('qrcode').toDataURL('image/png');
@@ -97,22 +98,7 @@ const Home = () => {
 
   return <main class="main">
     <header class="header">
-      <nav class="navbar">
-        <div class="logo"> <img src={Logo} alt="logo" class="logo-image" />
-          <div class="stroke"></div>
-          <h2 class="logo-title">SCISSOR</h2>
-        </div>
-        <ul class="nav-items">
-          <li><a class="nav-item" href="#">My URLs</a></li>
-          <li><a class="nav-item" href="#section3">Features<img
-            src={expandMore} alt="expand" /></a></li>
-          <li><a class="nav-item" href="#section4">Pricing</a></li>
-          <li><a class="nav-item" href="#">Analytics</a></li>
-          <li><a class="nav-item" href="#faq-section">FAQs`</a></li>
-        </ul>
-        <div class="cta"> <button class="btn" onClick={() => navigate('/login')}>Log in</button> <button onClick={() => navigate('/sign-up')} class="btn">Try for free</button> </div>
-        <div class="menu"> <img src={menu} alt="menu" /> </div>
-      </nav>
+      
       <section class="hero-section">
         <h1 class="hero-header">Optimize Your Online Experience with Our Advanced <span class="text-style">URL
           Shortening</span> Solution<img class="under-hero-header" src={vector3}

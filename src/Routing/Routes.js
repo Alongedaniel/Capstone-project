@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,6 +15,7 @@ import SignUp from "../Pages/Sign Up/SignUp";
 import { Box, Typography } from "@mui/material";
 import useSelectors from "../app/selectors";
 import useForm from "../features/Form/Form";
+import Footer from "../Components/Footer/Footer";
 // import User from "../User/User";
 // import RequireAuth from "../Components/RequireAuth/RequireAuth";
 
@@ -52,6 +53,24 @@ const OnSuccess = () => {
 }
 
 const PrivateRoutes = () => {
+
+     const [authenticated, setAuthenticated] = useState(false);
+  console.log(authenticated)
+
+  useEffect(() => {
+    // setauthenticated(JSON.parse(localStorage.getItem("auth")))
+    try {
+      const jsonValue = localStorage.getItem("auth");
+      const value = JSON.parse(jsonValue);
+      // Use the value here
+      setAuthenticated(value)
+    } catch (error) {
+      console.error("Error parsing JSON:", error);
+    }
+    // if (authenticated) {
+    //   navigate("/")
+    // }
+  })
   
   return (
     <Router>
@@ -61,22 +80,24 @@ const PrivateRoutes = () => {
           <Route
             path="login"
             element={
-              <MainLayout>
-                <Login />
-              </MainLayout>
+              <>
+                <Login authenticated={authenticated} />
+                <Footer />
+              </>
             }
           />
           <Route
             path="sign-up"
             element={
-              <MainLayout>
-                <SignUp />
-              </MainLayout>
+              <>
+                <SignUp authenticated={authenticated} />
+                <Footer />
+              </>
             }
           />
           <Route
             path=""
-            element={<MainLayout>
+            element={<MainLayout authenticated={authenticated}>
                 <Home />
               </MainLayout>
             }

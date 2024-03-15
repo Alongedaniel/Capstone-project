@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 // import {
 //   Stack,
 //   Typography,
@@ -25,6 +25,7 @@ import useSelectors from "../../app/selectors";
 
 const Footer = () => {
     const {dispatch} = useSelectors()
+
   return (
     <footer class="footer-container">
       <div class="content">
@@ -36,7 +37,7 @@ const Footer = () => {
           <div class="footer-left-bottom"> <img src={twitter} alt="" /><img
             src={feather} alt="" /><img src={linkedin}
               alt="" /><img src={facebook} alt="" /> </div>
-          <h3 style={{cursor: 'pointer', zIndex: 5}} onClick={() => dispatch(logoutUser())}>Logout</h3>
+          {/* {authenticated ? <h3 style={{cursor: 'pointer', zIndex: 5}} onClick={() => dispatch(logoutUser())}>Logout</h3> : null} */}
         </div>
         <div class="footer-right">
           <div class="footer-right-items">

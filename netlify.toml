@@ -10,5 +10,5 @@
 
 [[headers]]
   for = "/*.html"
-    [headers.values]
-      Cache-Control = "no-store"
+  [headers.values]
+    Cache-Control = "no-store"

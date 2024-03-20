@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Logo from "../../Assets/SVGs/vector7.svg"
-import expandMore from "../../Assets/SVGs/expand_more_FILL0_wght400_GRAD0_opsz48.svg"
-import menu from "../../Assets/SVGs/menu_FILL0_wght400_GRAD0_opsz48.svg"
 import vector3 from "../../Assets/SVGs/Vector 3.svg"
 import frame10 from "../../Assets/SVGs/Frame 1000001716.svg"
 import vector2 from "../../Assets/SVGs/Vector 2.svg"

@@ -55,15 +55,19 @@ const OnSuccess = () => {
 const PrivateRoutes = () => {
   const { dispatch, loading, type } = useSelectors();
      const [authenticated, setAuthenticated] = useState(false);
+     const [user, setUser] = useState({});
   console.log(authenticated)
 
   useEffect(() => {
     // setauthenticated(JSON.parse(localStorage.getItem("auth")))
     try {
       const jsonValue = localStorage.getItem("auth");
+      const userValue = localStorage.getItem("user");
       const value = JSON.parse(jsonValue);
+      const users = JSON.parse(userValue);
       // Use the value here
       setAuthenticated(value)
+      setUser(users)
       console.log('running')
     } catch (error) {
       console.error("Error parsing JSON:", error);
@@ -98,31 +102,11 @@ const PrivateRoutes = () => {
           />
           <Route
             path=""
-            element={<MainLayout authenticated={authenticated}>
+            element={<MainLayout authenticated={authenticated} user={user}>
                 <Home />
               </MainLayout>
             }
           />
-          {/* <Route
-            path="wishlist"
-            element={
-              <RequireAuth>
-                <MainLayout>
-                  <Wishlist />
-                </MainLayout>
-              </RequireAuth>
-            }
-          /> */}
-          {/* <Route
-            path="cart"
-            element={
-              <RequireAuth>
-                <MainLayout>
-                  <Cart />
-                </MainLayout>
-              </RequireAuth>
-            }
-          /> */}
         </Route>
       </Routes>
     </Router>

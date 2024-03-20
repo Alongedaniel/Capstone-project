@@ -1,8 +1,7 @@
 import { Button, Stack, TextField, Typography, Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import OnboardingSideIcon from "../../Assets/Icons/OnboardingSideIcon";
 import GoogleIcon from "../../Assets/Icons/GoogleIcon";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Navigate } from "react-router-dom";
 import Popup from "../../Components/Modals/Popup";
 // import { createUser } from "../../features/users/userSlice";
 import useSelectors from "../../app/selectors";

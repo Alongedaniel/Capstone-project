@@ -5,7 +5,7 @@ import Footer from "../../Components/Footer/Footer";
 import {useNavigate, Navigate} from 'react-router-dom'
 import useSelectors from "../../app/selectors";
 
-const MainLayout = ({ children, authenticated }) => {
+const MainLayout = ({ children, authenticated, user }) => {
   const navigate = useNavigate()
   const { dispatch, loading, type } = useSelectors();
     useEffect(() => {
@@ -18,7 +18,7 @@ const MainLayout = ({ children, authenticated }) => {
   return (!authenticated ? <Navigate  to="/login" /> : 
     <Stack bgcolor="#f9f9f9">
       <Container maxWidth="xl" disableGutters>
-        <Navbar authenticated={authenticated} />
+        <Navbar authenticated={authenticated} user={user} />
         <Box>
           {/* <Stack height="1px" bgcolor="#f1f1f1"></Stack> */}
           {children}

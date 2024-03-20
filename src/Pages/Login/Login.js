@@ -7,7 +7,6 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import OnboardingSideIcon from "../../Assets/Icons/OnboardingSideIcon";
 import GoogleIcon from "../../Assets/Icons/GoogleIcon";
 import AppleIcon from "../../Assets/Icons/AppleIcon";
 // import { loginUser } from "../../features/users/userSlice";

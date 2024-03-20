@@ -93,7 +93,7 @@ const Navbar = ({authenticated, user}) => {
           <li><a class="nav-item" href="#faq-section">FAQs`</a></li>
         </ul>
       {authenticated ? <Box onClick={(e) => handleClick(e)} width='50px' height='50px' borderRadius='100%' bgcolor='#0065FE' display='flex' alignItems={'center'} justifyContent={'center'}>
-        <Typography textTransform='uppercase' fontSize={'24px'}>{getInitials(user?.displayName)}</Typography>
+        <Typography textTransform='uppercase' fontSize={'24px'}>{getInitials(user?.displayName ?? user?.email)}</Typography>
       </Box>
         : <div class="cta"> <button class="btn" onClick={() => navigate('/login')}>Log in</button> <button onClick={() => navigate('/sign-up')} class="btn">Try for free</button> </div>}
       
@@ -111,7 +111,7 @@ const Navbar = ({authenticated, user}) => {
         }}
       >
         
-        <MenuItem
+        {user?.displayName  && <MenuItem
           sx={{
             fontFamily: 'Open Sans',
             letterSpacing: '0.0015em',
@@ -120,7 +120,7 @@ const Navbar = ({authenticated, user}) => {
           }}
         >
           Logged in as {user?.displayName}
-        </MenuItem>
+        </MenuItem>}
         <MenuItem
           sx={{
             fontFamily: 'Open Sans',

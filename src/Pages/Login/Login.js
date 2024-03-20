@@ -30,7 +30,7 @@ const Login = ({authenticated}) => {
     if (authenticated) {
       navigate("/")
     }
-  }, [])
+  }, [authenticated, loading])
 
   const onSubmit = (e) => {
     e.preventDefault()
@@ -43,7 +43,7 @@ const Login = ({authenticated}) => {
     console.log(location?.state?.prevPath)
   }
   
-  return (
+  return (authenticated ? <Navigate  to="/" /> :
     <Stack justifyContent='center' alignItems="center" px='16px' 
         pb="140px"
         pt="91px" bgcolor='#fff'>

@@ -9,6 +9,7 @@ import {
   MenuItem,
   // Divider,
 } from "@mui/material";
+import '../../App.css'
 import React, { useEffect, useState } from "react";
 import "@fontsource/inter";
 import HeartIcon from "../../Assets/Icons/HeartIcon";
@@ -81,7 +82,7 @@ const Navbar = ({authenticated}) => {
     }
   };
   return (
-    <nav class="navbar">
+    <nav class="navbar" style={{padding: '12px 16px'}}>
         <div class="logo"> <img src={Logo} alt="logo" class="logo-image" />
           <div class="stroke"></div>
           <h2 class="logo-title">SCISSOR</h2>
@@ -95,7 +96,7 @@ const Navbar = ({authenticated}) => {
           <li><a class="nav-item" href="#faq-section">FAQs`</a></li>
         </ul>
         {authenticated ? <h3 style={{cursor: 'pointer', zIndex: 5}} onClick={() => dispatch(logoutUser())}>Logout</h3> :<div class="cta"> <button class="btn" onClick={() => navigate('/login')}>Log in</button> <button onClick={() => navigate('/sign-up')} class="btn">Try for free</button> </div>}
-        <div class="menu"> <img src={menu} alt="menu" /> </div>
+        {/* <div class="menu"> <img src={menu} alt="menu" /> </div> */}
       </nav>
   );
 };

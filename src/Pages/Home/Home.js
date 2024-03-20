@@ -68,7 +68,7 @@ const Home = () => {
     try {
       const headers = {
         "Content-Type": "application/json",
-        "apikey": "c0441bc28359493eb43b7633ddfadaa3",
+        "apikey": "bc81226d8f114696994626515293f574",
         // "workspace": "YOUR_WORKSPACE_ID"
       }
       let endpoint = "https://api.rebrandly.com/v1/links";

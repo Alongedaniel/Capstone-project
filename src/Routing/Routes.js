@@ -53,7 +53,7 @@ const OnSuccess = () => {
 }
 
 const PrivateRoutes = () => {
-
+  const { dispatch, loading, type } = useSelectors();
      const [authenticated, setAuthenticated] = useState(false);
   console.log(authenticated)
 
@@ -64,13 +64,14 @@ const PrivateRoutes = () => {
       const value = JSON.parse(jsonValue);
       // Use the value here
       setAuthenticated(value)
+      console.log('running')
     } catch (error) {
       console.error("Error parsing JSON:", error);
     }
     // if (authenticated) {
     //   navigate("/")
     // }
-  })
+  }, [authenticated, loading])
   
   return (
     <Router>

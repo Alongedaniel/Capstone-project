@@ -33,7 +33,7 @@ const SignUp = ({authenticated}) => {
     if (authenticated) {
       navigate("/")
     }
-  }, [])
+  }, [authenticated, loading])
 
   const onSubmit =async (e)  => {
     console.log(authenticated)
@@ -43,7 +43,7 @@ const SignUp = ({authenticated}) => {
       navigate("/");
   }
   
-  return (
+  return (authenticated ? <Navigate to="/" /> :
     <Stack px='16px' 
         pb="140px"
         pt="91px" bgcolor='#fff'>
